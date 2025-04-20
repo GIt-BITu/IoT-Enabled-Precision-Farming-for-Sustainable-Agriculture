@@ -1,6 +1,9 @@
 import NavBar from "/src/component/NavBar.jsx" ;
+import Greenhouse from "/src/assets/greenh.jpg"
 import Button from "@/component/Button.jsx";
 import Card from "/src/component/Card.jsx"
+
+c
 
 function LandingHome(){
     return(
@@ -17,6 +20,11 @@ function LandingHome(){
                 </div>
             </div>
                 <Card />
+
+
+
+
+
         </>
 
     )
