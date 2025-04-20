@@ -23,7 +23,7 @@ import Button from "./Button.jsx";
          ]
      },
      {
-         path: "/services", title: "Services", index : 3 ,dropdown: [
+         path: "", title: "Services", index : 3 ,dropdown: [
              {
                  path :"/aboutUs" , title :"About Us"
              },
@@ -41,7 +41,7 @@ import Button from "./Button.jsx";
      },
 
      {
-         path: "" , title: "Solution",index : 4, dropdown: [
+         path: "" , title: "Solutions",index : 4, dropdown: [
              {
                  path :"/Monitoring" , title: "Monitoring"
              },
