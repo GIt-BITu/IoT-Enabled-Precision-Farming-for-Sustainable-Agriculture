@@ -1,18 +1,12 @@
 import NavBar from "/src/component/NavBar.jsx" ;
-import Greenhouse from "/src/assets/greenh.jpg"
 import Button from "@/component/Button.jsx";
 import Card from "/src/component/Card.jsx"
-
-c
 
 function LandingHome(){
     return(
         <>
             <NavBar />
-            <div className="bg-[url('/src/assets/greenh.jpg')] w-[100%] h-screen bg-center bg-cover bg-no-repeat flex
-             items-center"   >
-
-
+            <div className="bg-[url('/src/assets/greenh.jpg')] w-[100%] h-screen bg-center bg-cover bg-no-repeat flex items-center"   >
                 <div className="flex-col space-y-4 pl-32 max-w-[800px] ">
                     <h1 className="text-white text-[42px] font-bold">Make Your Greenhouse Futuristic</h1>
                     <p className="text-white text-xl font-semibold leading-8">For An up-to-date greenhouse, AgriBloom Board provides the best technologies through which both of controlling and monitoring are possible to be integrated within your greenhouse.  </p>
