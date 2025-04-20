@@ -1,15 +1,15 @@
 import NavBar from "/src/component/NavBar.jsx" ;
-import Greenhouse from "/src/assets/greenh.jpg"
 import Button from "@/component/Button.jsx";
 import Card from "/src/component/Card.jsx"
-
-c
+import Footer from "/src/component/Footer.jsx"
+import Example from "/src/component/Example.jsx"
+import Reviews from "/src/component/Reviews.jsx"
 
 function LandingHome(){
     return(
         <>
             <NavBar />
-            <div className="bg-[url('/src/assets/greenh.jpg')] w-[100%] h-screen bg-center bg-cover bg-no-repeat flex
+            <div className="bg-[url('/src/assets/green.png')] w-[100%] h-screen bg-center bg-cover bg-no-repeat flex
              items-center"   >
 
 
@@ -20,11 +20,9 @@ function LandingHome(){
                 </div>
             </div>
                 <Card />
-
-
-
-
-
+                <Example />
+                <Reviews />
+                <Footer />
         </>
 
     )
