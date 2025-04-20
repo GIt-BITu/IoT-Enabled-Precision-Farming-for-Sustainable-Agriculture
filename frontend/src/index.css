@@ -177,18 +177,6 @@ code {
 
 }
 
-.card-animation{
-  animation: anime ease-in-out infinite 10s;
-}
 
-@keyframes anime {
-  0%{
-    transform: translateX(-120%);
-  }
-  100%{
-    transform: translateX(120%);
-  }
-
-}
 
 
