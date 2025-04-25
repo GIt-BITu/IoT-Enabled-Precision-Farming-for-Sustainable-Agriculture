@@ -1,10 +1,9 @@
 import NavBar from "/src/component/NavBar.jsx" ;
-import Greenhouse from "/src/assets/green.png"
 import Button from "@/component/Button.jsx";
-import Card from "/src/component/Card.jsx";
-import Footer from "/src/component/Footer.jsx";
-
-
+import Card from "/src/component/Card.jsx"
+import Footer from "/src/component/Footer.jsx"
+import Example from "/src/component/Example.jsx"
+import Reviews from "/src/component/Reviews.jsx"
 
 function LandingHome(){
     return(
@@ -21,12 +20,12 @@ function LandingHome(){
                 </div>
             </div>
                 <Card />
+                <Example />
+                <Reviews />
                 <Footer />
-
         </>
 
     )
 
 }
-
 export default LandingHome;
