@@ -1,0 +1,6 @@
+/home/alan/Finall-year-Project/backend/login/src/main/java/com/example/login/service/CustomerService.java
+/home/alan/Finall-year-Project/backend/login/src/main/java/com/example/login/LoginApplication.java
+/home/alan/Finall-year-Project/backend/login/src/main/java/com/example/login/model/Customer.java
+/home/alan/Finall-year-Project/backend/login/src/main/java/com/example/login/controller/CustomerController.java
+/home/alan/Finall-year-Project/backend/login/src/main/java/com/example/login/repository/CustomerRepository.java
+/home/alan/Finall-year-Project/backend/login/src/main/java/com/example/login/config/CorsConfig.java
