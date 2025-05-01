@@ -5,10 +5,7 @@ import com.example.demo.TaskAdmin.service.taskService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,16 +21,16 @@ public class taskController {
         List<task> allTasks= service.getAllTasks();
         List<task> recentTasks = new ArrayList<>();
         if (allTasks.size()>3) {
-
             for (int i = 1; i <= 3; i++) {
                 recentTasks.add(allTasks.get(allTasks.size() - i));
             }
         }else {
             recentTasks =allTasks;
         }
-
         return recentTasks;
-
     }
-
+    @GetMapping("/task/{id}")
+    public task task(@RequestParam("id") Long id) {
+            return service.getTaskById(id);
+    }
 }

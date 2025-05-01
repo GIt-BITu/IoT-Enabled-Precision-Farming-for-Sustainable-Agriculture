@@ -22,6 +22,8 @@ public class task {
     private String date;
     @Column(name = "location")
     private String location;
+    @Column(name = "status")
+    private String status ="not accepted";
 
     @ManyToOne
     @JoinColumn(name = "idAdmin" ,referencedColumnName = "id")
@@ -29,13 +31,14 @@ public class task {
 
 
     public task() {}
-    public task(Long id, String description, String title, String date, String location, admin chief) {
+    public task(Long id, String description, String title, String date, String location, admin chief,String status) {
         this.id = id;
         this.description = description;
         this.title = title;
         this.date = date;
         this.location = location;
         this.chief = chief;
+        this.status = status;
     }
     public Long getId() {
         return id;
@@ -45,7 +48,6 @@ public class task {
     public void setId(Long id) {
         this.id = id;
     }
-
 
     public String getDescription() {
         return description;
@@ -77,6 +79,13 @@ public class task {
     }
     public void setChief(admin chief) {
         this.chief = chief;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 }
