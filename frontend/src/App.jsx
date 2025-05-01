@@ -1,16 +1,14 @@
 import React from "react";
-import {BrowserRouter} from "react-router-dom";
-import FarmerRoutes from "@/pages/Farmer/FarmerRoutes.jsx";
+import LandingHome from "./pages/LandingHome.jsx";
+import NavBar from "./component/NavBar.jsx";
+import Student from "./component/Student.jsx";
+import TechChiefDashboard from "@/pages/TechChiefDashboard.jsx";
 
 function App() {
     return (
-        <>
-            <div>
-                <BrowserRouter>
-                    <FarmerRoutes />
-                </BrowserRouter>
-            </div>
-        </>
+        <div >
+            <TechChiefDashboard />
+        </div>
 
     )
 }
