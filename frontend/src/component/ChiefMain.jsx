@@ -57,10 +57,10 @@ function ChiefMain(){
             return recentTasks.map(item=>
                 <div key={item.index} className=" bg-white flex px-8 py-7 space-y-4 flex-col w-[30%] overflow-hidden min-h-[10%] justify-center items-center rounded-md">
                     <div>
-                        <h1 className="text-black text-[18px]">{item.title}</h1>
+                        <h1 className="text-black text-[18px] ">{item.title}</h1>
                     </div>
                     <div >
-                        <p className="text-black">{item.description}</p>
+                        <p className="text-black text-center">{item.description}</p>
                     </div>
                     <div>
                         <Button className="bg-blue-900 hover:bg-blue-950">See more</Button>
