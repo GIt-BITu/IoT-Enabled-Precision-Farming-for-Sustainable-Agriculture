@@ -1,16 +1,12 @@
 import React from "react";
-import {BrowserRouter} from "react-router-dom";
-import FarmerRoutes from "@/pages/Farmer/FarmerRoutes.jsx";
+import LandingHome from "./pages/LandingHome.jsx";
+import NavBar from "./component/NavBar.jsx";
 
 function App() {
     return (
-        <>
-            <div>
-                <BrowserRouter>
-                    <FarmerRoutes />
-                </BrowserRouter>
-            </div>
-        </>
+        <div className="bg-[]">
+            <LandingHome />
+        </div>
 
     )
 }

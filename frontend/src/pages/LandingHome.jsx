@@ -5,6 +5,7 @@ import Footer from "/src/component/LandingPage/Footer.jsx"
 import Example from "/src/component/LandingPage/Example.jsx"
 import Reviews from "/src/component/LandingPage/Reviews.jsx"
 
+
 function LandingHome(){
     return(
         <>
