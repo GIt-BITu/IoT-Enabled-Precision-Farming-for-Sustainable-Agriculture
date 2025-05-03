@@ -27,7 +27,7 @@ function Profile(){
                 </div>
                 <i onClick={() => setOpen(prev => !prev)} className="fa-solid fa-ellipsis absolute text-[#f1f7e7] text-xl right-3 top-3 cursor-pointer hover:bg-[#f1f7e7] hover:text-[#0c1b0e] p-1 rounded-full transition duration-300 ease-in-out"></i>
             </div>
-            {open && <DropDownProfile items={items} />}
+            {open && <DropDownProfile items={items} bgColor="bg-[#f1f7e7]" textColor="text-[#0c1b0e] hover:bg-[#cbe1bd] hover:text-[#0c1b0e]"/>}
         </>
     )
 }
