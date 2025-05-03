@@ -1,41 +1,22 @@
 import React, {useEffect, useState} from "react";
 import Button  from "@/component/Button.jsx";
+import {Link, BrowserRouter as Router, Routes, Navigate} from "react-router-dom";
+import Task from "@/pages/Task.jsx";
 
 
-const progressTask=[
-{
-    name: "title" ,  state:"almost"
-},
-{
-    name: "title" ,  state:"almost"
-},
-{
-    name: "title" ,  state:"almost"
-}
-]
+
 
 
 function ChiefMain(){
-    const [recentTasks,setRecentTasks]=useState([])
+    const [allTasks,setAllTasks]=useState([])
     const [notification,setNotification] =useState(true)
     const [noData,setNoData]=useState(true)
 
-    const Listp=progressTask.map(item=>
-        <div className="bg-yellow-600 flex flex-col items-center px-7 py-6 space-y-4 justify-center rounded-md mt-7 " >
-            <div>
-                <h1 className="text-white font-semibold">{item.name}</h1>
-            </div>
-            <div className="flex justify-center items-center space-x-3 ">
-                <p className="text-white">status: {item.state}</p>
-                <Button className="bg-blue-900 text-white">update</Button>
-            </div>
 
-        </div>
-    )
     useEffect(() => {
         fetch("http://localhost:9090/chiefTechnician").
             then((res)=>res.json()).then((data)=>{
-                setRecentTasks(data);
+                setAllTasks(data);
                 setNoData(!(data.length===0));
 
         })
@@ -43,8 +24,23 @@ function ChiefMain(){
             setNoData(false);}))
     }, []);
 
-    function GetTasks(){
-        if (!noData){
+    const Listp=allTasks.filter(item=>item.status==="accepted").map(item=>
+        <div className="bg-yellow-600 flex flex-col items-center px-7 py-6 space-y-4 justify-center rounded-md mt-7 " >
+            <div>
+                <h1 className="text-white font-semibold">{item.title}</h1>
+            </div>
+            <div className="flex justify-center items-center space-x-3 ">
+                <p className="text-white">status: {item.status}</p>
+                <Button className="bg-blue-900 text-white">update</Button>
+            </div>
+
+        </div>
+    )
+
+
+
+    function GetrecentTasks(){
+        if (!noData || allTasks.filter(item=> item.status==="not accepted").length===0){
             return(
                 <>
                     <div className="bg-white flex px-8 py-7 space-y-4 flex-col justify-center items-center rounded-md">
@@ -54,26 +50,30 @@ function ChiefMain(){
             );
         }else{
 
-            return recentTasks.map(item=>
-                <div key={item.index} className=" bg-white flex px-8 py-7 space-y-4 flex-col w-[30%] overflow-hidden min-h-[10%] justify-center items-center rounded-md">
-                    <div>
-                        <h1 className="text-black text-[18px] ">{item.title}</h1>
+            return allTasks.filter(item=>item.status==="not accepted").map(item=>
+                    <div key={item.index}
+                         className=" bg-white flex px-8 py-7 space-y-4 flex-col w-[30%] overflow-hidden  items-center rounded-md">
+                        <div>
+                            <h1 className="text-black text-[18px] ">{item.title}</h1>
+                        </div>
+                        <div>
+                            <p className="text-black text-center">{item.description}</p>
+                        </div>
+                        <div>
+                            <Link to={`/chiefTechnician/task/${item.id}`}>
+                                <Button className="text-white font-semibold text-lg bg-blue-900 hover:bg-blue-950">see
+                                    more</Button>
+                            </Link>
+                        </div>
                     </div>
-                    <div >
-                        <p className="text-black text-center">{item.description}</p>
-                    </div>
-                    <div>
-                        <Button className="bg-blue-900 hover:bg-blue-950">See more</Button>
-                    </div>
-                </div>
 
-            );
+
+        )
+            ;
         }
-
-
-
     }
-    return(
+
+    return (
         <>
             <div className="bg-blue-950 h-screen w-screen  flex-col justify-center items-center p-2">
                 <nav className="flex justify-between items-center border-yellow-700 border-b-2">
@@ -81,7 +81,8 @@ function ChiefMain(){
                         <h1 className="text-xl ml-5 text-white font-bold hover:text-yellow-700">Dashboard </h1>
                     </div>
                     <div className="flex mr-5 relative">
-                        <span className={`  ${notification ? 'absolute right-[0%] fa-solid w-1.5 h-1.5 rounded-full bg-red-600 block' : 'hidden'}`}></span>
+                        <span
+                            className={`  ${notification ? 'absolute right-[0%] fa-solid w-1.5 h-1.5 rounded-full bg-red-600 block' : 'hidden'}`}></span>
                         <i className="cursor-pointer fa-solid fa-bell text-slate-300" onClick={()=>setNotification(!notification)}></i>
                     </div>
                 </nav>
@@ -94,7 +95,7 @@ function ChiefMain(){
                     </div>
                 </div>
                 <div className=" flex justify-around items-center mt-5">
-                    <GetTasks />
+                    <GetrecentTasks />
                 </div>
                 <div className="flex-col justify-center items-center mt-7 ">
                     <div>
