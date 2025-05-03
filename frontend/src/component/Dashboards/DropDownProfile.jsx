@@ -1,18 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const items = [
-    {
-        title: "Settings",
-        icon: "fa-solid fa-gear",
-    },
-    {
-        title: "Log out",
-        icon: "fa-solid fa-arrow-right-from-bracket"
-    }
-]
-
-function DropDownProfile(){
+function DropDownProfile({items}){
     return (
         <>
             <div className="relative">
