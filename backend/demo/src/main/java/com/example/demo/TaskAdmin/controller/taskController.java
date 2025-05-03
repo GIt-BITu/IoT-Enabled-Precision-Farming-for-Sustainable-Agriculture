@@ -4,11 +4,13 @@ import com.example.demo.TaskAdmin.model.task;
 import com.example.demo.TaskAdmin.service.taskService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/chiefTechnician")
@@ -17,20 +19,17 @@ public class taskController {
     @Autowired
     private taskService service;
     @GetMapping
-    public List<task> recentTasks() {
-        List<task> allTasks= service.getAllTasks();
-        List<task> recentTasks = new ArrayList<>();
-        if (allTasks.size()>3) {
-            for (int i = 1; i <= 3; i++) {
-                recentTasks.add(allTasks.get(allTasks.size() - i));
-            }
-        }else {
-            recentTasks =allTasks;
-        }
-        return recentTasks;
+    public List<task> allTasks() {
+         return  service.getAllTasks();
     }
     @GetMapping("/task/{id}")
-    public task task(@RequestParam("id") Long id) {
+    public task task(@PathVariable Long id) {
             return service.getTaskById(id);
+    }
+
+    @PostMapping("/task/{id}")
+    public ResponseEntity<task> updateTask(@PathVariable Long id, @RequestBody Map<String,String> value) {
+            task task = service.updateTask(id, value.get("status"));
+           return ResponseEntity.ok(task);
     }
 }

@@ -2,11 +2,11 @@ package com.example.demo.TaskAdmin.model;
 
 import com.example.demo.Admin.model.admin;
 import jakarta.persistence.*;
-
 import java.lang.String;
 
 
 @Entity
+
 @Table(name= "Tasks")
 public class task {
     @Id
@@ -22,8 +22,8 @@ public class task {
     private String date;
     @Column(name = "location")
     private String location;
-    @Column(name = "status")
-    private String status ="not accepted";
+    @Column(name = "status",columnDefinition = " VARCHAR(255) default 'not accepted'")
+    private String status ;
 
     @ManyToOne
     @JoinColumn(name = "idAdmin" ,referencedColumnName = "id")

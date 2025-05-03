@@ -1,10 +1,10 @@
 import React from "react"
 
 
-function Button({children,className}){
+function Button({children,className,onClick}){
     return(<>
         <button className={`py-1.5 px-3 text-white border-none rounded-md  cursor-pointer
-        transition-all duration-200 ease-linear ${className}`}>{children}</button>
+        transition-all duration-200 ease-linear ${className}`} onClick={onClick}>{children}</button>
     </>)
 
 }
