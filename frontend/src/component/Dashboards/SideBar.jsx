@@ -2,8 +2,6 @@ import React from "react";
 import Profile from "./Profile.jsx";
 import { NavLink } from 'react-router-dom';
 import logo from "/src/assets/Logo AB.png";
-import Complaint from "@/component/Dashboards/Farmer/Complaint.jsx";
-
 
 function SideBar({sideLinks , activeColor , inactiveColor , hover, children}) {
     return (
