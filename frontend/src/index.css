@@ -3,9 +3,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f5f5f5;
@@ -171,12 +175,12 @@ code {
     width: 100%;
   }
 
+
   .flex-centre{
     @apply flex items-center justify-center;
   }
 
 }
-
 
 
 
