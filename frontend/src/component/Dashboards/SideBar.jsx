@@ -3,7 +3,7 @@ import Profile from "./Profile.jsx";
 import { NavLink } from 'react-router-dom';
 import logo from "/src/assets/Logo AB.png";
 
-function SideBar({sideLinks , activeColor , inactiveColor , hover, children}) {
+function SideBar({sideLinks , activeColor , inactiveColor , hover, children, logoColor}) {
     return (
         <>
             <div className="relative w-64 flex flex-col justify-between overflow-hidden ">
@@ -11,7 +11,7 @@ function SideBar({sideLinks , activeColor , inactiveColor , hover, children}) {
                     <div className="flex items-center justify-between px-5">
                         <div className="flex items-center justify-center gap-1 cursor-default">
                             <img className="w-12 h-12 rounded-full" src={logo} alt="logo"/>
-                            <h1 className="text-2xl font-bold text-[#f1f7e7]">AgriBloom</h1>
+                            <h1 className={`text-2xl font-bold ${logoColor}`}>AgriBloom</h1>
                         </div>
                     </div>
                     <span className="bg-[#FFFFFF19] h-[0.1px] border-none "></span>
@@ -31,7 +31,7 @@ function SideBar({sideLinks , activeColor , inactiveColor , hover, children}) {
                 </div>
                 <div>
                     <span className="block bg-[#FFFFFF19] my-5 h-[0.1px] border-none "></span>
-                    <Profile />
+                    <Profile textColor="text-[#f1f7e7]" emailColor="text-[#b6cbb4]"/>
                 </div>
             </div>
         </>
