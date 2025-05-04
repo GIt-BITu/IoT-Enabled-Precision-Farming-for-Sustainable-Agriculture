@@ -35,14 +35,10 @@ function Task(){
         };
 
     function Buttons(){
-        if (ChangeState){
+        if (!ChangeState){
             return (
+
                 <>
-                    <h1>you have already accept this Task</h1>
-                    <Link to={`/chiefTechnician`}><Button className="bg-slate-400 hover:bg-slate-700">Return</Button></Link>
-                </>
-                    )}else{
-                return ( <>
                     <Link to={`/chiefTechnician`}> <Button className="bg-blue-900 hover:bg-blue-950" onClick={handleAccept}>Accept</Button></Link>
                     <Link to={`/chiefTechnician`}><Button className="bg-slate-400 hover:bg-slate-700">Return</Button></Link>
 
