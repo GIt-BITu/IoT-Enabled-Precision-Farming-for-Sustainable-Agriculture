@@ -32,4 +32,8 @@ public class taskController {
             task task = service.updateTask(id, value.get("status"));
            return ResponseEntity.ok(task);
     }
+    @GetMapping("/PendingTasks")
+    public List<task> pendingTasks() {
+        return service.getAllTasks();
+    }
 }
