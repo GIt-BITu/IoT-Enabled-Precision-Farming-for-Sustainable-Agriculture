@@ -1,7 +1,7 @@
-package com.example.login.controller;
+package com.example.backend.login.controller;
 
-import com.example.login.model.Customer;
-import com.example.login.service.CustomerService;
+import com.example.backend.login.model.Customer;
+import com.example.backend.login.service.CustomerService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

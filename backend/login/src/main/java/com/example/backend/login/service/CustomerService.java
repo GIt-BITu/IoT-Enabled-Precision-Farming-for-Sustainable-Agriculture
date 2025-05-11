@@ -1,8 +1,8 @@
-package com.example.login.service;
+package com.example.backend.login.service;
 
 
-import com.example.login.model.Customer;
-import com.example.login.repository.CustomerRepository;
+import com.example.backend.login.model.Customer;
+import com.example.backend.login.repository.CustomerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
