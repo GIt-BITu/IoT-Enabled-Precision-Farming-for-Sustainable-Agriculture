@@ -1,6 +1,6 @@
-package com.example.login.repository;
+package com.example.backend.login.repository;
 
-import com.example.login.model.Customer;
+import com.example.backend.login.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

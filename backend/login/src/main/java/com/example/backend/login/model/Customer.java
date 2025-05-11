@@ -1,4 +1,4 @@
-package com.example.login.model;
+package com.example.backend.login.model;
 
 import jakarta.persistence.*;
 import lombok.*;
