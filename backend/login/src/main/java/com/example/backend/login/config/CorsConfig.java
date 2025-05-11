@@ -1,4 +1,4 @@
-package com.example.login.config;
+package com.example.backend.login.config;
 
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.context.annotation.Bean;
