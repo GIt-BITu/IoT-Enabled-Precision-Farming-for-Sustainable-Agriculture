@@ -25,13 +25,16 @@ public class task {
     @Column(name = "status",columnDefinition = " VARCHAR(255) default 'not accepted'")
     private String status ;
 
+    @Column(name = "ProgressStatus",columnDefinition = "VARCHAR(255) default 'Pending' ")
+    private String Progress_status;
+
     @ManyToOne
     @JoinColumn(name = "idAdmin" ,referencedColumnName = "id")
     private admin chief;
 
 
     public task() {}
-    public task(Long id, String description, String title, String date, String location, admin chief,String status) {
+    public task(Long id, String description, String title, String date, String location, admin chief,String status, String Progress_status) {
         this.id = id;
         this.description = description;
         this.title = title;
@@ -39,6 +42,7 @@ public class task {
         this.location = location;
         this.chief = chief;
         this.status = status;
+        this.Progress_status = Progress_status;
     }
     public Long getId() {
         return id;
@@ -87,5 +91,10 @@ public class task {
     public void setStatus(String status) {
         this.status = status;
     }
-
+    public String getProgress_status() {
+        return Progress_status;
+    }
+    public void setProgress_status(String progress_status) {
+        this.Progress_status = progress_status;
+    }
 }
