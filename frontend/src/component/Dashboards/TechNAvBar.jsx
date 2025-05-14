@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 
 
 
-function TechNAvBar() {
+function TechNAvBar({children}) {
     const [notification,setNotification] =useState(true)
     return (
         <>
             <nav className="flex justify-between items-center border-[#f5f5dc] border-b-2">
                 <div>
-                    <h1 className="text-xl ml-5 text-white font-bold hover:text-amber-100">Dashboard </h1>
+                    <h1 className="text-xl ml-5 text-white font-bold hover:text-amber-100">{children}</h1>
                 </div>
                 <div className="flex mr-5 relative">
                         <span

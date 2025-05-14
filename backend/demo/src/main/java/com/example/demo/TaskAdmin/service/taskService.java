@@ -29,9 +29,17 @@ public class taskService {
         taskRepository.deleteById(id);
     }
 
-    public task updateTask(Long id, String value){
+    public task updateTaskStatusAndProgress(Long id, String value, String value1){
         task task=getTaskById(id);
         task.setStatus(value);
+        task.setProgress_status(value1);
         return taskRepository.save(task);
     }
+    public task update(Long id,String value){
+        task task=getTaskById(id);
+        task.setProgress_status(value);
+        return taskRepository.save(task);
+    }
+
+
 }
