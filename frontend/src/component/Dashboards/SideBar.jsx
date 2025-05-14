@@ -31,7 +31,7 @@ function SideBar({sideLinks , activeColor , inactiveColor , hover, children, log
                 </div>
                 <div>
                     <span className="block bg-[#FFFFFF19] my-5 h-[0.1px] border-none "></span>
-                    <Profile textColor="text-[#f1f7e7]" emailColor="text-[#b6cbb4]"/>
+                    <Profile textColor="text-blue-950" emailColor="text-blue-950"/>
                 </div>
             </div>
         </>
