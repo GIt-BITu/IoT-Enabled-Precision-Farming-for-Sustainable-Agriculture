@@ -1,11 +1,16 @@
 import React from "react";
-import LandingHome from "./pages/LandingHome.jsx";
+import {BrowserRouter} from "react-router-dom";
+import FarmerRoutes from "@/pages/Farmer/FarmerRoutes.jsx";
 
 function App() {
     return (
-        <div>
-            <LandingHome />
-        </div>
+        <>
+            <div>
+                <BrowserRouter>
+                    <FarmerRoutes />
+                </BrowserRouter>
+            </div>
+        </>
 
     )
 }
