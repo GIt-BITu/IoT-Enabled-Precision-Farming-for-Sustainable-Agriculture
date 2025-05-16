@@ -1,10 +1,12 @@
 import React from "react";
-import LandingHome from "./pages/LandingHome.jsx";
-import NavBar from "./component/NavBar.jsx";
-import TechChiefDashboard from "@/pages/TechChiefDashboard.jsx";
-import Task  from "@/pages/Task.jsx";
+import TechChiefDashboard from "@/pages/ChiefTechnician/TechChiefDashboard.jsx";
+import Task  from "@/pages/ChiefTechnician/Task.jsx";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import AllPendingTasks from "@/pages/AllPendingTask.jsx";
+import AllPendingTask from "@/pages/ChiefTechnician/AllPendingTask.jsx";
+import UpdateStatus  from "@/pages/ChiefTechnician/UpdateStatus.jsx";
+import CompletedTasks from "@/pages/ChiefTechnician/CompletedTasks.jsx";
+import GetReport from "@/pages/ChiefTechnician/GetReport.jsx";
+import Team from "@/pages/ChiefTechnician/Team.jsx";
 
 function App() {
     return (
@@ -13,8 +15,12 @@ function App() {
                 <Router>
                     <Routes>
                         <Route path="/chiefTechnician" element={<TechChiefDashboard />} />
-                        <Route path="/chiefTechnician/task/:id" element={<Task />} />
-                        <Route path="/chiefTechnician/PendingTasks" element={<AllPendingTasks />} />
+                        <Route path="/task/:id" element={<Task />} />
+                        <Route path="/PendingTasks" element={<AllPendingTask />} />
+                        <Route path="/updateTask/:id" element={<UpdateStatus />} />
+                        <Route path="/Completed-Tasks" element={<CompletedTasks />} />
+                        <Route path="/report/:id" element={<GetReport />} />
+                        <Route path="/teams" element={<Team/>} />
                     </Routes>
                 </Router>
             </div>
