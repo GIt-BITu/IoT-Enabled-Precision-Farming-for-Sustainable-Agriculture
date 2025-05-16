@@ -1,18 +1,5 @@
 import React from "react" ;
-import installation from "/src/assets/installation.png";
-import controlling from "/src/assets/controlling2.png"
-import monitoring from "/src/assets/monitoring3.jpg"
-const ListCard=[
-    {
-        img: monitoring, title :"Monitoring" , description :"For an accurate information, our devices send the clearest data ,concerning your grains,appropriately in which a farmer is getting monitoring his greenhouse.", index :1
-    },
-    {
-        img:controlling, title :"Controlling " , description : "Through AgriBloom ,you can flexibly control your devices without hindrance nor problems. with a friendly use you are capable of utilizing our products safely.", index :2
-    },
-    {
-        img:installation , title :"Set up " , description :"Once you are part of our company we provide the best technicians who can help to install your needed devices in order to modernize your greenhouse ", index :3
-    }
-]
+import {ListCard} from "@/component/Dashboards/Farmer/data.jsx";
 function Card(){
      const cardItem= ListCard.map(item =>
          (

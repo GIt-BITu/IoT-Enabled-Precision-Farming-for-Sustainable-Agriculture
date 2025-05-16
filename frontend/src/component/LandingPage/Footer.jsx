@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "/src/assets/Logo AB.png"
-import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Link} from "react-router-dom";
 
 
 const Contact= {

@@ -1,17 +1,8 @@
 import React, {useState} from 'react';
 import Pic from '/src/assets/client4.jpg';
 import DropDownProfile from "./DropDownProfile.jsx";
+import {items} from "@/component/Dashboards/Farmer/data.jsx";
 
-const items = [
-    {
-        title: "Settings",
-        icon: "fa-solid fa-gear",
-    },
-    {
-        title: "Log out",
-        icon: "fa-solid fa-arrow-right-from-bracket"
-    }
-]
 
 function Profile({textColor, emailColor}){
     const [open,setOpen] = useState(false);
