@@ -179,6 +179,17 @@ code {
   .flex-centre{
     @apply flex items-center justify-center;
   }
+  .scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  .scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+
 
 }
 
