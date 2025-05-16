@@ -1,7 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
-
-
+import {Link} from "react-router-dom";
 
 function DropDown({items,visible}){
     const ListItem= items.map(item =>
@@ -17,11 +15,7 @@ function DropDown({items,visible}){
                 <ul className={` flex-col justify-center items-center bg-white p-2 space-y-2 rounded-md shadow absolute top-[160%] left-0 duration-200 transition-all ease-linear ${ !visible  && 'hidden'} `} >
                     {ListItem}
                 </ul>
-
-
             </div>
-
-
         </>
         )
 
