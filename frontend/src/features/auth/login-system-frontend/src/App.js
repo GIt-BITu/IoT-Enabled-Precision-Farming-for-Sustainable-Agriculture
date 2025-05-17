@@ -47,7 +47,7 @@ function AuthLink() {
   const location = useLocation();
   if (location.pathname !== '/register') {
     return (
-      <p class = "registration-link">
+      <p className = "registration-link">
         Don't have an account? <Link to="/register">Click here to register</Link>
       </p>
     );
