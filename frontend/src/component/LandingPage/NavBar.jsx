@@ -1,40 +1,56 @@
 import React, { useState } from "react";
 import logo from "../../assets/Logo AB.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DropDown from "./DropDown.jsx";
 import Button from "../Button.jsx";
 import { LinkList } from "@/component/Dashboards/Farmer/data.jsx";
 
 function NavBar() {
     const [activeIndex, setActiveIndex] = useState(null);
+    const navigate = useNavigate();
 
-    const linkItem = LinkList.map((item, i) => {
+    const goToSignIn = () => {
+        navigate("/signin");
+    };
+
+    const goToSignUp = () => {
+        navigate("/signin/register");
+    };
+
+    const linkItems = LinkList.map((item, i) => {
         const isActive = activeIndex === i;
+
         return (
-            <Link
-                className="relative underline-before justify-center items-center flex"
-                key={item.index}
-                to={item.path}
-                onClick={() =>
-                    setActiveIndex((previousIndex) =>
-                        previousIndex === i ? null : i
-                    )
-                }
+            <div
+                key={item.id || item.path || i}
+                className="relative flex items-center"
+                onMouseLeave={() => setActiveIndex(null)}
             >
-                <span>{item.title}</span>
-                {item.dropdown.length > 0 && (
-                    <span
-                        className={`material-symbols-outlined transition-transform duration-200 ${
-                            isActive ? "rotate-180" : ""
-                        }`}
-                    >
-                        keyboard_arrow_down
-                    </span>
-                )}
+                <Link
+                    className="relative underline-before justify-center items-center flex"
+                    to={item.path}
+                    onClick={() =>
+                        setActiveIndex((prevIndex) =>
+                            prevIndex === i ? null : i
+                        )
+                    }
+                >
+                    <span>{item.title}</span>
+                    {item.dropdown.length > 0 && (
+                        <span
+                            className={`material-symbols-outlined transition-transform duration-200 ${
+                                isActive ? "rotate-180" : ""
+                            }`}
+                        >
+                            keyboard_arrow_down
+                        </span>
+                    )}
+                </Link>
+
                 {item.dropdown.length > 0 && (
                     <DropDown items={item.dropdown} visible={isActive} />
                 )}
-            </Link>
+            </div>
         );
     });
 
@@ -48,14 +64,20 @@ function NavBar() {
             </div>
 
             <nav className="flex justify-center items-center space-x-7 text-[18px] relative">
-                {linkItem}
+                {linkItems}
             </nav>
 
             <div className="flex-center space-x-3 mr-6">
-                <Button className="bg-black hover:opacity-70 text-white rounded-md">
+                <Button
+                    className="bg-black hover:opacity-70 text-white rounded-md"
+                    onClick={goToSignUp}
+                >
                     Sign Up
                 </Button>
-                <Button className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-md">
+                <Button
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-md"
+                    onClick={goToSignIn}
+                >
                     Sign In
                 </Button>
             </div>

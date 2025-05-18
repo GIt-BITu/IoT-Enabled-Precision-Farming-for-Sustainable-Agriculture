@@ -1,5 +1,5 @@
 import NavBar from "/src/component/LandingPage/NavBar.jsx" ;
-import Button from "@/component/Button.jsx";
+import Button from "/src/component/Button.jsx";
 import Card from "/src/component/LandingPage/Card.jsx"
 import Footer from "/src/component/LandingPage/Footer.jsx"
 import Example from "/src/component/LandingPage/Example.jsx"
