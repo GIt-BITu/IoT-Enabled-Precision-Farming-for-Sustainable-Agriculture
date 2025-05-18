@@ -1,11 +1,7 @@
-package com.example.demo.ChiefTech.model;
+package com.example.demo.GeneralTech.model;
 
 import com.example.demo.Farmer.GreenHouse.model.greenhouse;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "devices")

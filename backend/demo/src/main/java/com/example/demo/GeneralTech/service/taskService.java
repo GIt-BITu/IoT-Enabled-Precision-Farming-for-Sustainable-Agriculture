@@ -1,7 +1,7 @@
-package com.example.demo.ChiefTech.service;
+package com.example.demo.GeneralTech.service;
 
-import com.example.demo.ChiefTech.model.task;
-import com.example.demo.ChiefTech.repository.taskRepository;
+import com.example.demo.GeneralTech.model.task;
+import com.example.demo.GeneralTech.repository.taskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

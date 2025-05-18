@@ -10,6 +10,7 @@ import Team from "@/pages/ChiefTechnician/Team.jsx";
 import Configuration from "@/pages/ChiefTechnician/Configuration.jsx";
 import ConnectDevice from "@/pages/ChiefTechnician/ConnectDevice.jsx";
 import TechnicianHome from "@/pages/Technician/TechnicianHome.jsx";
+import TechConfigurtion from "@/pages/Technician/TechConfiguration.jsx";
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                         <Route path="/configuration" element={<Configuration />} />
                         <Route path="/configuration/:id" element={<ConnectDevice />} />
                         <Route path="/Technician" element={<TechnicianHome />} />
+                        <Route path="/Technician/:id" element={<TechConfigurtion />} />
                     </Routes>
                 </Router>
             </div>

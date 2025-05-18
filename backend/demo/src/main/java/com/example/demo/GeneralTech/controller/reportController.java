@@ -1,6 +1,6 @@
-package com.example.demo.ChiefTech.controller;
+package com.example.demo.GeneralTech.controller;
 
-import com.example.demo.ChiefTech.service.reportService;
+import com.example.demo.GeneralTech.service.reportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

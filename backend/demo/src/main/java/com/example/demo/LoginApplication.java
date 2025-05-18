@@ -1,12 +1,12 @@
-package com.example.backend;
+package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = {
-		"com.example.backend",
-		"com.example.backend.reviews",
-		"com.example.backend.login",
+		"com.example.demo.Admin",
+		"com.example.demo.GeneralTech",
+		"com.example.demo.Farmer",
 })
 public class LoginApplication {
 

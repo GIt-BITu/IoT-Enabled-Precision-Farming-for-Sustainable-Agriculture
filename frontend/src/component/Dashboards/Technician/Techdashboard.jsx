@@ -1,29 +1,25 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import TechNAvBar from "@/component/Dashboards/TechNAvBar.jsx";
 import Button from "@/component/Button.jsx";
-
-const greenhouse=[
-    {
-        owner:"imed",
-        location:"El-Khroub"
-    },
-    {
-        owner:"raouf",
-        location:"la boume"
-    },
-    {
-        owner:"anes",
-        location:"hamma"
-    },
-]
+import {Link, BrowserRouter as Router, Routes, Navigate} from "react-router-dom";
 
 function TechnicianDashboard() {
-    const listG=greenhouse.map((item,index)=>
+    const [greenhouses, setGreenhouses] = useState([]);
+
+
+    useEffect(() => {
+        fetch("http://localhost:9090/Technician")
+            .then(res => res.json())
+            .then((data) => setGreenhouses(data))
+            .catch((err)=>{console.log(err)})
+    }, []);
+
+    const listG=greenhouses.map((item,index)=>
         <div key={index} className="bg-white rounded-md p-1 flex items-center justify-between ">
             <p className="text-black font-semibold ml-5">The Owner: {item.owner}</p>
             <p className="text-black font-semibold ml-5">Location: {item.location}</p>
             <div>
-                <Button className="text-white bg-blue-900 mr-5">Configure it</Button>
+             <Link to={`/Technician/${item.id}`}>   <Button className="text-white bg-blue-900 mr-5">Configure it</Button></Link>
             </div>
         </div>
 )

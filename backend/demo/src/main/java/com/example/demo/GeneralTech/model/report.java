@@ -1,4 +1,4 @@
-package com.example.demo.ChiefTech.model;
+package com.example.demo.GeneralTech.model;
 
 import jakarta.persistence.*;
 

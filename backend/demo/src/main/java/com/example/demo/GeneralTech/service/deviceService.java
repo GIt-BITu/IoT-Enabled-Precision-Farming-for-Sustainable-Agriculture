@@ -1,7 +1,7 @@
-package com.example.demo.ChiefTech.service;
+package com.example.demo.GeneralTech.service;
 
-import com.example.demo.ChiefTech.model.devices;
-import com.example.demo.ChiefTech.repository.deviceRepository;
+import com.example.demo.GeneralTech.model.devices;
+import com.example.demo.GeneralTech.repository.deviceRepository;
 import com.example.demo.Farmer.GreenHouse.model.greenhouse;
 import com.example.demo.Farmer.GreenHouse.repository.greenhouseRepository;
 import org.springframework.beans.factory.annotation.Autowired;

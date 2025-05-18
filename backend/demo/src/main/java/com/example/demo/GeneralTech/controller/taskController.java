@@ -1,12 +1,12 @@
-package com.example.demo.ChiefTech.controller;
+package com.example.demo.GeneralTech.controller;
 
-import com.example.demo.ChiefTech.DTO.connection;
-import com.example.demo.ChiefTech.model.devices;
-import com.example.demo.ChiefTech.model.report;
-import com.example.demo.ChiefTech.model.task;
-import com.example.demo.ChiefTech.service.deviceService;
-import com.example.demo.ChiefTech.service.reportService;
-import com.example.demo.ChiefTech.service.taskService;
+import com.example.demo.GeneralTech.DTO.connection;
+import com.example.demo.GeneralTech.model.devices;
+import com.example.demo.GeneralTech.model.report;
+import com.example.demo.GeneralTech.model.task;
+import com.example.demo.GeneralTech.service.deviceService;
+import com.example.demo.GeneralTech.service.reportService;
+import com.example.demo.GeneralTech.service.taskService;
 import com.example.demo.Farmer.GreenHouse.model.greenhouse;
 import com.example.demo.Farmer.GreenHouse.service.greenhouseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,6 +85,23 @@ public class taskController {
     @PostMapping("/configuration/{id}")
     public ResponseEntity<devices> updateConfiguration(@PathVariable Long id, @RequestBody connection value) {
         devices device =deviceSer.linkDevice(id,value.getId(),value.isStatus());
+        return ResponseEntity.ok(device);
+    }
+
+    @GetMapping("/Technician")
+    public List<greenhouse> technician() {
+        return greenSer.getAllGreenhouse();
+    }
+
+    @GetMapping("/Technician/{id}")
+    public List<devices> AvailableDev(){
+        return deviceSer.getAllDevices() ;
+    }
+
+    @PostMapping("/Technician/{id}")
+    public ResponseEntity<devices> configGreenhouse(@PathVariable Long id, @RequestBody connection value) {
+
+        devices device= deviceSer.linkDevice(id,value.getId(),value.isStatus());
         return ResponseEntity.ok(device);
     }
 }

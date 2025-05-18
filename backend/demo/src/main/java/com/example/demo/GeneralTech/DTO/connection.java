@@ -1,6 +1,4 @@
-package com.example.demo.ChiefTech.DTO;
-
-import lombok.Getter;
+package com.example.demo.GeneralTech.DTO;
 
 public class connection {
 
