@@ -1,7 +1,6 @@
-package com.example.demo.TaskAdmin.model;
+package com.example.demo.ChiefTech.model;
 
 import jakarta.persistence.*;
-import org.springframework.scheduling.config.Task;
 
 @Entity
 @Table(name="reports")

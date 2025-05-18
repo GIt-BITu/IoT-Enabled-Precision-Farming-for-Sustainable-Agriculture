@@ -1,9 +1,7 @@
-package com.example.demo.TaskAdmin.controller;
+package com.example.demo.ChiefTech.controller;
 
-import com.example.demo.TaskAdmin.model.report;
-import com.example.demo.TaskAdmin.service.reportService;
+import com.example.demo.ChiefTech.service.reportService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
