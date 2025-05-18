@@ -1,9 +1,14 @@
-package com.example.demo.TaskAdmin.controller;
+package com.example.demo.ChiefTech.controller;
 
-import com.example.demo.TaskAdmin.model.report;
-import com.example.demo.TaskAdmin.model.task;
-import com.example.demo.TaskAdmin.service.reportService;
-import com.example.demo.TaskAdmin.service.taskService;
+import com.example.demo.ChiefTech.DTO.connection;
+import com.example.demo.ChiefTech.model.devices;
+import com.example.demo.ChiefTech.model.report;
+import com.example.demo.ChiefTech.model.task;
+import com.example.demo.ChiefTech.service.deviceService;
+import com.example.demo.ChiefTech.service.reportService;
+import com.example.demo.ChiefTech.service.taskService;
+import com.example.demo.Farmer.GreenHouse.model.greenhouse;
+import com.example.demo.Farmer.GreenHouse.service.greenhouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +23,11 @@ public class taskController {
     private taskService service;
     @Autowired
     private reportService reportSer;
+    @Autowired
+     private greenhouseService greenSer;
+    @Autowired
+     private deviceService deviceSer;
+
     @GetMapping("/chiefTechnician")
     public List<task> allTasks() {
          return  service.getAllTasks();
@@ -37,10 +47,12 @@ public class taskController {
     public List<task> pendingTasks() {
         return service.getAllTasks();
     }
+
     @GetMapping("/updateTask/{id}")
     public task updateStatus(@PathVariable Long id) {
         return service.getTaskById(id);
     }
+
     @PostMapping("/updateTask/{id}")
     public ResponseEntity<Map<String,Object>> updateTaskStatus(@PathVariable Long id , @RequestBody  Map<String,String> value)  {
         task task = service.update(id,value.get("progress_status"));
@@ -56,9 +68,23 @@ public class taskController {
     public List<task> completedTasks() {
         return service.getAllTasks();
     }
+
     @GetMapping("/report/{id}")
     public report report(@PathVariable Long id) {
         return reportSer.getReport(id);
     }
+    @GetMapping("/configuration")
+    public List<greenhouse> configuration() {
+        return greenSer.getAllGreenhouse();
+    }
+    @GetMapping("/configuration/{id}")
+    public List<devices> AllDevices() {
+        return deviceSer.getAllDevices() ;
+    }
 
+    @PostMapping("/configuration/{id}")
+    public ResponseEntity<devices> updateConfiguration(@PathVariable Long id, @RequestBody connection value) {
+        devices device =deviceSer.linkDevice(id,value.getId(),value.isStatus());
+        return ResponseEntity.ok(device);
+    }
 }

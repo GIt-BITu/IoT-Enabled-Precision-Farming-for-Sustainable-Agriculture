@@ -85,7 +85,7 @@ function ChiefMain(){
                         </div>
                     </div>
                     <div className=" flex justify-around items-center mt-5">
-                        <GetrecentTasks />
+                        {GetrecentTasks()}
                     </div>
                     <div className="flex-col justify-center items-center mt-7 ">
                         <div>
