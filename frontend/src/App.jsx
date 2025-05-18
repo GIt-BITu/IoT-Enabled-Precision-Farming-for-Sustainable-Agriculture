@@ -1,37 +1,20 @@
 import React from "react";
-import TechChiefDashboard from "@/pages/ChiefTechnician/TechChiefDashboard.jsx";
-import Task  from "@/pages/ChiefTechnician/Task.jsx";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import AllPendingTask from "@/pages/ChiefTechnician/AllPendingTask.jsx";
-import UpdateStatus  from "@/pages/ChiefTechnician/UpdateStatus.jsx";
-import CompletedTasks from "@/pages/ChiefTechnician/CompletedTasks.jsx";
-import GetReport from "@/pages/ChiefTechnician/GetReport.jsx";
-import Team from "@/pages/ChiefTechnician/Team.jsx";
-import Configuration from "@/pages/ChiefTechnician/Configuration.jsx";
-import ConnectDevice from "@/pages/ChiefTechnician/ConnectDevice.jsx";
-import TechnicianHome from "@/pages/Technician/TechnicianHome.jsx";
+import { Routes, Route } from "react-router-dom";
+import LandingHome from "./pages/LandingHome.jsx";
+import AuthRoutes from "@/features/auth/login-system-frontend/src/App.jsx";
 
 function App() {
     return (
-        <>
-            <div>
-                <Router>
-                    <Routes>
-                        <Route path="/chiefTechnician" element={<TechChiefDashboard />} />
-                        <Route path="/task/:id" element={<Task />} />
-                        <Route path="/PendingTasks" element={<AllPendingTask />} />
-                        <Route path="/updateTask/:id" element={<UpdateStatus />} />
-                        <Route path="/Completed-Tasks" element={<CompletedTasks />} />
-                        <Route path="/report/:id" element={<GetReport />} />
-                        <Route path="/teams" element={<Team />} />
-                        <Route path="/configuration" element={<Configuration />} />
-                        <Route path="/configuration/:id" element={<ConnectDevice />} />
-                        <Route path="/Technician" element={<TechnicianHome />} />
-                    </Routes>
-                </Router>
-            </div>
-        </>
-    )
+        <div className="bg-white">
+            <Routes>
+                <Route path="/" element={<LandingHome />} />
+                <Route path="/signin/*" element={<AuthRoutes />} />
+                <Route path="/admin" element={<h1>Admin Dashboard</h1>} />
+                <Route path="/farmer" element={<h1>Farmer Dashboard</h1>} />
+                <Route path="/dashboard" element={<h1>Generic Dashboard</h1>} />
+            </Routes>
+        </div>
+    );
 }
 
-export default App
+export default App;
