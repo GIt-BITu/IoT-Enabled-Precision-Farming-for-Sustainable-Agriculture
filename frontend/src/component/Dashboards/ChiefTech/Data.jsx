@@ -18,5 +18,10 @@ export const TechnicanLinks = [
         title: "Completed Tasks",
         icon: "fa-solid fa-check",
         path: `/Completed-Tasks`
+    },
+    {
+        title: "Configuration",
+        icon: "fa-solid fa-screwdriver-wrench",
+        path: `/configuration`
     }
 ]

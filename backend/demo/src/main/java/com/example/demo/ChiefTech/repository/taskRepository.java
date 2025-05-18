@@ -1,6 +1,6 @@
-package com.example.demo.TaskAdmin.repository;
+package com.example.demo.ChiefTech.repository;
 
-import com.example.demo.TaskAdmin.model.task;
+import com.example.demo.ChiefTech.model.task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
