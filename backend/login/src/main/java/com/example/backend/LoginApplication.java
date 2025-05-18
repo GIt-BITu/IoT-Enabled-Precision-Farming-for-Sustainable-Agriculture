@@ -7,6 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 		"com.example.backend",
 		"com.example.backend.reviews",
 		"com.example.backend.login",
+		"com.example.backend.Farmer",
+		"com.example.backend.ChiefTech",
+		"com.example.backend.Admin"
 })
 public class LoginApplication {
 
