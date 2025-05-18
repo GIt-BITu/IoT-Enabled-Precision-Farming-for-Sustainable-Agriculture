@@ -175,6 +175,21 @@ code {
     width: 100%;
   }
 
+  .scrollbar-colored::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  .scrollbar-colored::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  .scrollbar-colored::-webkit-scrollbar-thumb {
+    background-color: #377e86;
+    border-radius: 10px;
+    border: none;
+  }
 
   .flex-centre{
     @apply flex items-center justify-center;
