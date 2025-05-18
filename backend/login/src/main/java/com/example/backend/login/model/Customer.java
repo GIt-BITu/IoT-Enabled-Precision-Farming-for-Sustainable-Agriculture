@@ -75,6 +75,15 @@ public class Customer {
     )
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    @Column(
+            name = "role",
+            nullable = false,
+            columnDefinition = "VARCHAR(20) DEFAULT 'FARMER'"
+    )
+    private Role role;
+
+
     public Integer getAge() {
         return Period.between(this.dob, LocalDate.now()).getYears();
     }

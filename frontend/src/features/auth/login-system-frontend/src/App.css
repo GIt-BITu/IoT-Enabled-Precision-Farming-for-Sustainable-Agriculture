@@ -1,15 +1,15 @@
-* {
+.auth-wrapper * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
+.auth-wrapper body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
 }
 
-.App {
+.auth-wrapper .App {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,14 +17,14 @@ body {
   height: 100vh;
 }
 
-.centered-container {
+.auth-wrapper .centered-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.login-container {
+.auth-wrapper .login-container {
   background-color: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -32,7 +32,7 @@ body {
   text-align: center;
 }
 
-.login-container h2 {
+.auth-wrapper .login-container h2 {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 600;
@@ -40,11 +40,11 @@ body {
   margin-bottom: 1rem;
 }
 
-.input-container {
+.auth-wrapper .input-container {
   position: relative;
 }
 
-.input-label {
+.auth-wrapper .input-label {
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin-bottom: 0.25rem;
@@ -52,7 +52,7 @@ body {
   text-align: left;
 }
 
-.input-container input {
+.auth-wrapper .input-container input {
   background-color: #fff;
   padding: 1rem;
   padding-right: 3rem;
@@ -66,7 +66,7 @@ body {
   margin: 8px 0;
 }
 
-.login-button {
+.auth-wrapper .login-button {
   display: block;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -84,17 +84,17 @@ body {
   cursor: pointer;
 }
 
-.registration-link {
+.auth-wrapper .registration-link {
   text-align: center;
   margin-top: 15px;
   font-size: 14px;
 }
 
-.registration-link a {
+.auth-wrapper .registration-link a {
   color: #007bff;
   text-decoration: none;
 }
 
-.registration-link a:hover {
+.auth-wrapper .registration-link a:hover {
   text-decoration: underline;
 }
