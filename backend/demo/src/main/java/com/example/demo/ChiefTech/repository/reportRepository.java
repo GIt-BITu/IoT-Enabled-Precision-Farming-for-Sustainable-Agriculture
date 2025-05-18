@@ -1,6 +1,6 @@
-package com.example.demo.TaskAdmin.repository;
+package com.example.demo.ChiefTech.repository;
 
-import com.example.demo.TaskAdmin.model.report;
+import com.example.demo.ChiefTech.model.report;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

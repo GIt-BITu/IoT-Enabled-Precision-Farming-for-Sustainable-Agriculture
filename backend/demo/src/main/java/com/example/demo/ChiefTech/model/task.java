@@ -1,4 +1,4 @@
-package com.example.demo.TaskAdmin.model;
+package com.example.demo.ChiefTech.model;
 
 import com.example.demo.Admin.model.admin;
 import jakarta.persistence.*;

@@ -7,6 +7,9 @@ import UpdateStatus  from "@/pages/ChiefTechnician/UpdateStatus.jsx";
 import CompletedTasks from "@/pages/ChiefTechnician/CompletedTasks.jsx";
 import GetReport from "@/pages/ChiefTechnician/GetReport.jsx";
 import Team from "@/pages/ChiefTechnician/Team.jsx";
+import Configuration from "@/pages/ChiefTechnician/Configuration.jsx";
+import ConnectDevice from "@/pages/ChiefTechnician/ConnectDevice.jsx";
+import TechnicianHome from "@/pages/Technician/TechnicianHome.jsx";
 
 function App() {
     return (
@@ -20,7 +23,10 @@ function App() {
                         <Route path="/updateTask/:id" element={<UpdateStatus />} />
                         <Route path="/Completed-Tasks" element={<CompletedTasks />} />
                         <Route path="/report/:id" element={<GetReport />} />
-                        <Route path="/teams" element={<Team/>} />
+                        <Route path="/teams" element={<Team />} />
+                        <Route path="/configuration" element={<Configuration />} />
+                        <Route path="/configuration/:id" element={<ConnectDevice />} />
+                        <Route path="/Technician" element={<TechnicianHome />} />
                     </Routes>
                 </Router>
             </div>
