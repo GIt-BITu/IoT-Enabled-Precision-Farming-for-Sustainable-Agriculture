@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "api/v1/customer")
 @AllArgsConstructor
-
+@CrossOrigin(origins = "http://192.168.56.1:3000")
 public class CustomerController {
 
     @Autowired
@@ -25,7 +25,6 @@ public class CustomerController {
     @GetMapping("/get")
     public Customer getCustomer(@RequestParam(name = "email") String email,
                                 @RequestParam(name = "password") String password) {
-        System.out.println("Attempting login for email: " + email);
         return customerService.getCustomer(email,password);
     }
 
