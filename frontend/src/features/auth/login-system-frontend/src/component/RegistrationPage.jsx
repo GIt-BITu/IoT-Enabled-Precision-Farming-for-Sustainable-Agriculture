@@ -33,10 +33,10 @@ function RegistrationPage() {
     return (
     <div className='centered-container'>
       <div className="login-container">
-      <h1>Registrazione effettuata con successo!</h1>
+      <h1>Registration success!</h1>
       <h2> </h2>
       <div className="registration-link">
-        <p>Per accedere al tuo nuovo account <a href="/">Login here</a></p>
+        <p>To access your new account <a href="/signin">Login here</a></p>
       </div>
       </div>
 
@@ -58,13 +58,13 @@ function RegistrationPage() {
       </div>
       <div className="input-container">
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </div>
+      </div>To access your new account
       <div className="input-container">
         <input type="date" placeholder="Birthdate" value={dob} onChange={(e) => setBirthDate(e.target.value)} />
       </div>
       <button className="login-button" onClick={handleRegistration}>Register</button>
       <div className="login-link">
-        <p className='registration-link'>Already have an account? <a href="/">Login here</a></p>
+        <p className='registration-link'>Already have an account? <a href="/signin">Login here</a></p>
       </div>
     </div>
     </div>

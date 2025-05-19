@@ -10,25 +10,30 @@ function LoginPage({ onLogin }) {
       const url = `http://localhost:9090/api/v1/customer/get?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
       const response = await axios.get(url);
       const userData = response.data;
-      onLogin(userData);
 
+      if (userData && userData.role) {
+        onLogin(userData);
+      } else {
+        alert('Invalid user data or missing role');
+      }
     } catch (error) {
       console.error('Login error:', error);
+      alert('Login failed. Please check your credentials.');
     }
   };
 
   return (
-    <div className='login-container'>
-      <div className="login-form">
-        <h2>Sign in to your account</h2>
-        <div className="input-container">
-          <input type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+      <div className='login-container'>
+        <div className="login-form">
+          <h2>Sign in to your account</h2>
+          <div className="input-container">
+            <input type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          </div>
+          <div className="input-container">
+            <input type="password" placeholder="Enter password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          </div>
+          <button className="login-button" type="button" onClick={handleLogin}>Login</button>
         </div>
-        <div className="input-container">
-          <input type="password" placeholder="Enter password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </div>
-        <button className = "login-button" type = "button"onClick={handleLogin}>Login</button>
-      </div>
       </div>
   );
 }
