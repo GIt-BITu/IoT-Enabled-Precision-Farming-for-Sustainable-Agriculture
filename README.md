@@ -67,4 +67,3 @@ npm start
 ```
 
 The frontend application will start on http://localhost:3000
-```
