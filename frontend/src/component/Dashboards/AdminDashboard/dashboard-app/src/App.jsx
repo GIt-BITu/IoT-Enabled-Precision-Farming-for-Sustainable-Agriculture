@@ -17,7 +17,7 @@ function SettingsContent() {
     return null;
 }
 
-const App = () => {
+const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
 
   return (
@@ -40,4 +40,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default AdminDashboard;

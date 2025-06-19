@@ -23,8 +23,14 @@ function AuthRoutes() {
         case 'farmer':
           navigate('/farmer', { replace: true });
           break;
+        case 'technician':
+          navigate('/technician', { replace: true });
+          break;
+        case 'cheftechnician':
+          navigate('/chiefTechnician/dashboard', { replace: true });
+          break;
         default:
-          navigate('/dashboard', { replace: true });
+          navigate('/', { replace: true });
       }
     }
   }, [user, navigate]);

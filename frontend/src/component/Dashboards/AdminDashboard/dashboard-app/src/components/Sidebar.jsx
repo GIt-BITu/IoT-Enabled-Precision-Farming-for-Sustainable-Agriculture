@@ -1,8 +1,10 @@
 import React from 'react';
 import { LogOut, Home, Star, User, Settings } from 'lucide-react';
 import { AccessibilityIcon, ListIcon, AlertCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = ({ activeTab, setActiveTab }) => {
+    const navigate = useNavigate();
     const sidebarItems = [
         { id: 'dashboard', label: 'Dashboard', icon: <Home size={20} /> },
         { id: 'reviews', label: 'Reviews', icon: <Star size={20} /> },
@@ -31,7 +33,7 @@ const Sidebar = ({ activeTab, setActiveTab }) => {
                     </button>
                 ))}
             </div>
-            <button className="flex items-center p-4 hover:bg-gray-800">
+            <button className="flex items-center p-4 hover:bg-gray-800"  onClick={() => navigate('/')}>
                 <div className="w-6 mr-3"><LogOut size={20} /></div>
                 <span>Log Out</span>
             </button>

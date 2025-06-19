@@ -33,22 +33,22 @@ export const sideLinks = [
     {
         title: "Dashboard",
         icon: "fa-solid fa-house",
-        path: "/dashboard"
+        path: "dashboard"
     },
     {
         title: "Controlling",
         icon: "fa-solid fa-gamepad",
-        path: "/controlling"
+        path: "controlling"
     },
     {
         title: "My Submissions",
         icon: "fa-solid fa-list-check",
-        path: "/submissions"
+        path: "submissions"
     },
     {
         title: "Evaluation",
         icon: "fa-solid fa-star",
-        path: "/evaluation"
+        path: "evaluation"
     }
 ]
 
@@ -60,7 +60,7 @@ export const items = [
     },
     {
         title: "Log out",
-        icon: "fa-solid fa-arrow-right-from-bracket"
+        icon: "fa-solid fa-arrow-right-from-bracket",
     }
 ]
 

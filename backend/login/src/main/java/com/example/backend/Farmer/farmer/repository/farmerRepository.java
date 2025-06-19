@@ -1,4 +1,7 @@
 package com.example.backend.Farmer.farmer.repository;
 
-public class farmerRepository {
+import com.example.backend.Farmer.farmer.model.farmer;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface farmerRepository extends JpaRepository<farmer, Long> {
 }

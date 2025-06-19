@@ -5,7 +5,7 @@ import Monitoring from "@/component/Dashboards/Farmer/Dashboard/Monitoring.jsx";
 function DashboardMain(){
     return(
         <>
-            <div className="mt-8 p-3 h-screen flex flex-col rounded-md overflow-y-scroll scrollbar-colored">
+            <div className="mt-8 p-3 h-screen flex flex-col gap-10 rounded-md overflow-y-scroll scrollbar-colored">
                 <div>
                     <Weather />
                 </div>
